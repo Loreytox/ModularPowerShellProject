@@ -26,7 +26,7 @@ if ($CreatedAfter -match '^\d{2}/\d{2}/\d{4}$') { $CreatedAfter = [datetime]$Cre
 $CreatedBefore = Read-Host "Enter the creation date before (format: MM/DD/YYYY, default: today)"
 if ($CreatedBefore -match '^\d{2}/\d{2}/\d{4}$') { $CreatedBefore = [datetime]$CreatedBefore } else { $CreatedBefore = [datetime]::MaxValue }
 
-# Filter files based on user-defined criteriaa
+# Filter files based on user-defined criteria
 $files = Get-ChildItem -Path $SourcePath -Recurse -File |
 Where-Object {
     ($_.Name -like $FileName) -and
@@ -39,6 +39,7 @@ Where-Object {
 
 Write-Host "Found $($files.Count) matching file(s). Moving files..." -ForegroundColor Cyan
 
+# Handle duplicate file names by appending an incremental index
 foreach ($file in $files) {
     $dest = Join-Path $DestinationPath $file.Name
     if (Test-Path $dest) {
