@@ -9,7 +9,7 @@ function Get-ValidPath($PromptMessage) {
     return $Path
 }
 
-# Get source path
+
 $SourcePath = Get-ValidPath "Enter the source folder path"
 
 # Get destination path with folder creation option
@@ -26,7 +26,6 @@ if (!(Test-Path $DestinationPath -PathType Container)) {
     }
 }
 
-# Get file filtering criteria
 $FileName = Read-Host "Enter the file name pattern (e.g., 'LA_1703' or '*' for all)"
 $Extension = Read-Host "Enter the file extension (e.g., '.txt', '.csv', '.jpg', or '*' for all)"
 $MinFileSize = Read-Host "Enter the minimum file size in bytes (default: 0)"
@@ -50,11 +49,11 @@ $files = Get-ChildItem -Path $SourcePath -Recurse -File | Where-Object {
 
 Write-Host "Found $($files.Count) matching file(s). Moving files..." -ForegroundColor Cyan
 
-# Loading animation setup
+
 $loadingFrames = @("\", "|", "/", "-")
 $frameIndex = 0
 
-# Start time tracking
+
 $startTime = Get-Date
 
 # Move files with loading animation
@@ -82,7 +81,6 @@ foreach ($file in $files) {
     }
 }
 
-# Ensure animation runs for at least 3 seconds
 while ((New-TimeSpan -Start $startTime).TotalSeconds -lt 3) {
     $frame = $loadingFrames[$frameIndex]
     Write-Host "`r$frame Finalizing..." -NoNewline
@@ -90,15 +88,4 @@ while ((New-TimeSpan -Start $startTime).TotalSeconds -lt 3) {
     Start-Sleep -Milliseconds 200
 }
 
-# End animation with "o"
 Write-Host "`ro Operation completed. Moved $($files.Count) file(s)." -ForegroundColor Magenta
-
-# Delete empty folders
-Get-ChildItem -Path $SourcePath -Directory |
-Where-Object { (Get-ChildItem $_ -Recurse -File).count -eq 0 } |
-ForEach-Object { 
-    Remove-Item $_ -Recurse
-    Write-Host "Deleted empty folder: $($_.FullName)" -ForegroundColor Yellow
-}
-
-Write-Host "`nDone!" -ForegroundColor Green
