@@ -1,4 +1,4 @@
-# Read-Host for user-input insteadd of cmdlets
+# Read-Host for user-input instead of cmdlets
 $SourcePath = Read-Host "Enter the source folder path"
 while (!(Test-Path $SourcePath -PathType Container)) {
     Write-Host "Invalid path. Please enter a valid source folder." -ForegroundColor Red
@@ -26,6 +26,7 @@ if ($CreatedAfter -match '^\d{2}/\d{2}/\d{4}$') { $CreatedAfter = [datetime]$Cre
 $CreatedBefore = Read-Host "Enter the creation date before (format: MM/DD/YYYY, default: today)"
 if ($CreatedBefore -match '^\d{2}/\d{2}/\d{4}$') { $CreatedBefore = [datetime]$CreatedBefore } else { $CreatedBefore = [datetime]::MaxValue }
 
+# Filter files based on user-defined criteriaa
 $files = Get-ChildItem -Path $SourcePath -Recurse -File |
 Where-Object {
     ($_.Name -like $FileName) -and
