@@ -1,2 +1,0 @@
-$myVariable = "Hello World"
-$myVariable
