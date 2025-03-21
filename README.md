@@ -7,3 +7,8 @@ The project is designed to be modular, meaning each feature will be built as an 
 It’s worth noting that this is only the second time I’m working with PowerShell, so this project will also serve as a learning experience. The focus will be on writing clean, efficient code and improving my understanding of PowerShell’s capabilities as the project evolves.
 
 This is a hands-on, evolving project, and the emphasis will be on thoughtful design and continuous improvement.
+
+Day 2: 21.02.2025
+![image](https://github.com/user-attachments/assets/5d134876-fa13-4b38-8514-28d24f73b525)
+
+Today I searched for the most reasonable script that someone might find useful, for example the search and relocation of files. These files might be hidden in a folder somewhere with over 1k other files and it might be hard to move them all. I searched on StackOverflow and found a script that would do the job, but I found the sccript to be not so user-friendly which is why I decided to change it and implement a Read-Host input type. This way, the user is able to specify which file he wants with ease. I think that this module for the multi-modular project is a good stepping stone to start on.
