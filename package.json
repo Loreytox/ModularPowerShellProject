@@ -1,0 +1,24 @@
+{
+  "name": "powershell-modular-project",
+  "version": "1.0.0",
+  "description": "This project is a long-term effort to build a modular, scalable PowerShell tool that automates small, repetitive tasks to make daily work easier and more efficient. Over time, new features will be added to handle various automation needs, such as file management, system checks, or other helpful utilities.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Loreytox/ModularPowerShellProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Loreytox/ModularPowerShellProject/issues"
+  },
+  "homepage": "https://github.com/Loreytox/ModularPowerShellProject#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
