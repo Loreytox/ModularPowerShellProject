@@ -16,3 +16,18 @@ Today I searched for the most reasonable script that someone might find useful, 
 
 This is the source code that I used to get started:
 https://stackoverflow.com/questions/38063424/powershell-move-all-files-from-folders-and-subfolders-into-single-folder
+
+## Day 3: 28/03/2025
+Today I moslty worked on a GUI and trying to make my modular project modular. I didn't quite get how to show the scripts in the GUI and also wanted an easy solution as to be able to easily change and add things, since I will be adding more scripts over the course of this project.
+
+![image](https://github.com/user-attachments/assets/f0422b2f-e4ae-40fd-b30d-8fea1b1e7a90)
+
+This is the GUI and although simple, it serves its purpose.
+
+![image](https://github.com/user-attachments/assets/057a152a-7ed8-4fb7-bc0a-bdadb50e6cf5)
+
+And here is what the script does:
+This is a simple script that when it's run, it shows various System specs, which is fast and convenient, since one doesn't have to open settings and other things.
+
+I was heavily inspired by this code here:
+https://www.elevenforum.com/t/collecting-system-information-using-powershell-script.32808/
