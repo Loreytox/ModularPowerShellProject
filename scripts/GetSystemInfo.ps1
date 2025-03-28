@@ -50,7 +50,7 @@ function Get-StartupItems {
             Write-Warning ("Failed to query {0}: {1}" -f $source, $_.Exception.Message)
         }
     }
-    return , $startup  # Ensure array is returned even if empty
+    return , $startup
 }
 
 function Get-SystemHardware {
@@ -70,7 +70,7 @@ function Get-SystemHardware {
             Model        = $computerSystem.Model
             CPU          = $processor.Name
             MemoryGB     = $memory
-            Disks        = @($disks)  # Ensure array output
+            Disks        = @($disks)
         }
     }
     catch {
@@ -93,11 +93,9 @@ try {
         StartupItems = @(Get-StartupItems)
     }
 
-    # Save to JSON
     $jsonOutput = $auditData | ConvertTo-Json -Depth 5 -Compress
     $jsonOutput | Out-File -FilePath $logFile -Encoding utf8 -Force
 
-    # Console output
     Write-Host "System audit saved to: $logFile" -ForegroundColor Green
     $auditData | ConvertTo-Json -Depth 3
 
