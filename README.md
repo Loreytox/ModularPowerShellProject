@@ -31,3 +31,15 @@ This is a simple script that when it's run, it shows various System specs, which
 
 I was heavily inspired by this code here:
 https://www.elevenforum.com/t/collecting-system-information-using-powershell-script.32808/
+
+## Day 4: 04/04/2025
+For today's project I wanted to implement a script that when run, it would delete all unnecessary TEMP and BROWSER Files. These files are usually just temporary files and take only space away for the PC, so when I noticed that my available space was getting low, I decided to implement it.
+I research for a little bit, as well as watched a video on how to to it, but it was for Windows 10 and not 11, so I couldn't just do as he did, but it nontheless helped me understand how it would work. I also found a public repository on GitHub with some PowerShell commands to delete said files.
+
+![image](https://github.com/user-attachments/assets/af6982fc-7453-478a-b445-a26b80ed01de)
+
+This is what the user would see, once he ran the script. I also implemented a dry-run option, as to not accidentally delete important files.
+
+Here are some sources that I relied on:
+https://github.com/kamrullab/WindowsCleanupCommands
+https://www.youtube.com/watch?v=vJYzHTRh-pE
