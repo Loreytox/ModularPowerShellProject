@@ -41,5 +41,7 @@ I research for a little bit, as well as watched a video on how to to it, but it 
 This is what the user would see, once he ran the script. I also implemented a dry-run option, as to not accidentally delete important files.
 
 Here are some sources that I relied on:
+
 https://github.com/kamrullab/WindowsCleanupCommands
+
 https://www.youtube.com/watch?v=vJYzHTRh-pE
