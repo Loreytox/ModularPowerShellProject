@@ -15,6 +15,7 @@ Today I searched for the most reasonable script that someone might find useful, 
 ![image](https://github.com/user-attachments/assets/5d134876-fa13-4b38-8514-28d24f73b525)
 
 This is the source code that I used to get started:
+
 https://stackoverflow.com/questions/38063424/powershell-move-all-files-from-folders-and-subfolders-into-single-folder
 
 ## Day 3: 28/03/2025
@@ -30,6 +31,7 @@ And here is what the script does:
 This is a simple script that when it's run, it shows various System specs, which is fast and convenient, since one doesn't have to open settings and other things.
 
 I was heavily inspired by this code here:
+
 https://www.elevenforum.com/t/collecting-system-information-using-powershell-script.32808/
 
 ## Day 4: 04/04/2025
