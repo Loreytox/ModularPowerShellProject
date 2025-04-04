@@ -42,5 +42,4 @@ This is what the user would see, once he ran the script. I also implemented a dr
 
 Here are some sources that I relied on:
 https://github.com/kamrullab/WindowsCleanupCommands
-
 https://www.youtube.com/watch?v=vJYzHTRh-pE
