@@ -3,6 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const runBtn = document.getElementById("run-btn");
 
   let selectedScript = null;
+  let adminMode = false;
+
+  // Create Admin Mode toggle button
+  const adminBtn = document.createElement("button");
+  adminBtn.innerText = "Run as Admin: OFF";
+  adminBtn.style.marginBottom = "10px";
+  adminBtn.onclick = () => {
+    adminMode = !adminMode;
+    adminBtn.innerText = adminMode ? "Run as Admin: ON" : "Run as Admin: OFF";
+  };
+  scriptList.before(adminBtn); // Add above script list
 
   // Fetch available scripts from the server
   fetch("/list-scripts")
@@ -29,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    fetch(`/run-script?script=${selectedScript}`)
+    fetch(`/run-script?script=${selectedScript}&admin=${adminMode}`)
       .then((response) => response.text())
       .then((output) => {
         alert(output);

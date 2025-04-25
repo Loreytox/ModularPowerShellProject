@@ -16,10 +16,9 @@ $LogPaths = @(
     "$env:SystemRoot\Logs\*"
 )
 
-# Array to store deleted files
 $DeletedFiles = @()
 
-# Remove files and track deleted items
+# Remove and track items
 function Clear-Files($paths, $DryRun = $false) {
     foreach ($path in $paths) {
         if (Test-Path $path) {
@@ -48,12 +47,11 @@ Write-Host "Starting system cleanup..." -ForegroundColor Cyan
 $DryRunInput = Read-Host "Enable dry run mode? (yes/no)"
 $DryRun = $DryRunInput -eq "yes"
 
-# Clear temporary, browser, and log files
 Clear-Files $TempPaths $DryRun
 Clear-Files $BrowserPaths $DryRun
 Clear-Files $LogPaths $DryRun
 
-# Ask for a directory to check for duplicates
+# Ask for duplicates
 $TargetDir = Read-Host "Enter directory to check for duplicates (leave blank to skip)"
 if (-not [string]::IsNullOrWhiteSpace($TargetDir)) {
     if (Test-Path $TargetDir) {

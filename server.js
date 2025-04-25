@@ -25,21 +25,33 @@ app.get("/list-scripts", (req, res) => {
 // Endpoint to execute a PowerShell script
 app.get("/run-script", (req, res) => {
   const scriptName = req.query.script;
+  const adminMode = req.query.admin === "true";
+
   if (!scriptName) {
     return res.status(400).send("Script name is required.");
   }
 
   const scriptPath = path.join(__dirname, "scripts", scriptName);
 
-  // Use `start powershell` to open a new terminal
-  const command = `start powershell -NoExit -ExecutionPolicy Bypass -File "${scriptPath}"`;
+  let command;
+
+  if (adminMode) {
+    const wrapperPath = path.join(__dirname, "scripts", "RunAsAdmin.ps1");
+    command = `start powershell -NoExit -ExecutionPolicy Bypass -File "${wrapperPath}" -ScriptToRun '${scriptPath}'`;
+  } else {
+    command = `start powershell -NoExit -ExecutionPolicy Bypass -File "${scriptPath}"`;
+  }
 
   exec(command, (error) => {
     if (error) {
       console.error(`Error executing script: ${error}`);
       return res.status(500).send("Failed to start PowerShell.");
     }
-    res.send(`PowerShell script "${scriptName}" started in a new window.`);
+    res.send(
+      `PowerShell script "${scriptName}" started${
+        adminMode ? " as administrator" : ""
+      } in a new window.`
+    );
   });
 });
 
