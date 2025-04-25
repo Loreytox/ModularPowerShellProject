@@ -47,3 +47,6 @@ Here are some sources that I relied on:
 https://github.com/kamrullab/WindowsCleanupCommands
 
 https://www.youtube.com/watch?v=vJYzHTRh-pE
+
+## Day 5: 25/04/2025
+My idea for today was to come up with a script idea without the help of the internet adn since I often tend to forget my wifi passwords, mostly because I don't usually write them down, I thought to myself "Wouldn't it be cool to have a script that would fetch all of the passwords for me?". So, I asked an AI if it was possible and it certainly was. I must admit that today i relied heavily on the use of AI, after finishing the rought shape of the code, as I had no idea how to continue and that might be perhaps why today I couldn't finish the script.
